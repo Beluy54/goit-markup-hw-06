@@ -240,15 +240,7 @@ a.link {
   background: #2f303a;
   width: 358px;
   height: 50px;
-}
-
-.button-telegram {
-  width: 200px;
-  height: 50px;
-
-  background: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  color: var(--white-text);
 }
 
 .join {
@@ -285,7 +277,7 @@ a.link {
 }
 
 .icon-telegram {
-  fill: var(--white-text);
+  margin-left: 10px;
 }
 
 .radius-footer {
@@ -988,6 +980,7 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   color: var(--white-text);
+  border: 0;
 }
 
 .telegram {
@@ -996,31 +989,6 @@ a {
 }
 
 /*  BACKDRPO */
-
-.form .text {
-  display: inline-block;
-  padding-right: 40px;
-  padding-top: 40px;
-  padding-left: 40px;
-  margin-bottom: 30px;
-
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  letter-spacing: 0.03em;
-
-  color: #212121;
-}
-
-.form-email {
-  display: flex;
-}
-
-.form-input {
-  margin-bottom: 28px;
-  height: 40px;
-}
 
 .backdrop {
   position: fixed;
@@ -1035,19 +1003,6 @@ a {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.form {
-  width: 528px;
-  height: 581px;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 28px;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .modal {
@@ -1071,11 +1026,14 @@ a {
 .button-submit {
   width: 200px;
   height: 50px;
+  margin-left: 165px;
+  margin-top: 30px;
 
   color: var(--white-text);
   background: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: 0;
 }
 
 .button-text {
@@ -1111,4 +1069,174 @@ textarea {
   letter-spacing: 0.01em;
 
   color: #757575;
+}
+
+/* FORM */
+
+.form .text {
+  display: inline-block;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-left: 40px;
+  margin-bottom: 30px;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+
+  color: #212121;
+}
+
+.form-email {
+  display: flex;
+}
+
+.form-input {
+  height: 40px;
+  width: 448px;
+}
+
+.form {
+  width: 528px;
+  height: 581px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.form-field-position {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: Roboto, sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.form-field-comment {
+  position: relative;
+}
+
+.form-label-comment {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: Roboto, sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-40px);
+}
+
+.form-label-comment {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+textarea:focus + .form-label-comment,
+textarea:not(:placeholder-shown) + .form-label-comment {
+  transform: translateY(-35px);
+}
+
+.icon-form {
+  position: absolute;
+  left: -19px;
+  transform: translateY(-50%);
+  top: 50%;
+  margin-right: 10px;
+}
+
+.icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.icon-close:hover {
+  fill: var(--accent-color);
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  fill: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.button-close {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: #ffffff;
+}
+
+textarea:focus + .form-label-comment .comment-text,
+textarea:not(:placeholder-shown) + .form-label-comment .comment-text {
+  color: var(--accent-color);
+}
+
+.link-checkbox {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.label-checkbox {
+  margin-left: 54px;
+}
+
+.wrapper-checkbox {
+  position: relative;
+}
+
+.check {
+  position: absolute;
+  left: 54px;
+  top: 3px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid #212121;
+  border-radius: 4px;
+}
+
+.checkbox-input:checked + .check {
+  background-color: var(--accent-color);
+  background-image: url(/img/check.svg);
+  background-size: contain;
+}
+
+.checkbox-input {
+  width: 15px;
 }
